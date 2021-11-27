@@ -1,3 +1,5 @@
+
+### Is taken from: https://opensource.com/article/21/9/logo-python-turtle"
 import turtle
 
 def get_mid_point(point_1: list, point_2: list):
