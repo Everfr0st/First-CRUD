@@ -66,7 +66,7 @@ def _get_client_name():
 
 
 def _print_welcome():
-    print('WELCOME TO PLATZI VENTAS')
+    print('WELCOME TO GELAVENTAS')
     print('*' * 50)
     print('What would you like to do today?: ')
     print('[C]reate client')
