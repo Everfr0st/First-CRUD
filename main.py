@@ -50,8 +50,15 @@ def update_client(client_name, updated_name):
 def delete_client(client_name):
     global clients
 
-    if client_name in clients:
-        clients.remove(client_name)
+    for client in clients:
+        if client['name'] != client_name:
+            continue
+        else:
+            return True
+
+    if client in clients:
+
+        clients.remove(client)
     else:
         _client_not_exist()
 
@@ -126,7 +133,7 @@ if __name__ == '__main__':
         update_client(client_name, updated_name)
         list_clients()
     elif command == 'D':
-        client_name = _get_client_name()
+        client = _get_client_name()
         delete_client(client_name)
         list_clients()
     elif command == 'S':
