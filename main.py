@@ -72,7 +72,7 @@ def search_client(client_name):
             return True
 
 def _client_not_exist():
-    print('Client not in client\'s list')
+    print('Client not in this client\'s list')
 
 def _get_client_field(field_name):
     field = None
@@ -97,6 +97,14 @@ def _get_client_name():
 
     return client_name
 
+def _save_client_data():
+    client = {
+            'name': _get_client_field('name'),
+            'company': _get_client_field('company'),
+            'email': _get_client_field('email'),
+            'position': _get_client_field('position')
+            }
+    return client
 
 def _print_welcome():
     print('WELCOME TO GELAVENTAS')
@@ -116,14 +124,11 @@ if __name__ == '__main__':
     command = command.upper()
 
     if command == 'C':
-        client = {
-                'name': _get_client_field('name'),
-                'company': _get_client_field('company'),
-                'email': _get_client_field('email'),
-                'position': _get_client_field('position'),
-                }
+        
+        client = _save_client_data()
         create_client(client)
         list_clients()
+        
     elif command == 'L':
         list_clients()
     elif command == 'U':
